@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.alexeykatsuro.xbank.data.Card" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        android:layout_marginBottom="16dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_bg"
+            android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
+
+            <TextView
+                android:id="@+id/text_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@{item.amount + ` ` + item.currency}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="999 999.00 AZN"
+                tools:textColor="?android:textColorPrimaryInverse" />
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{item.name}"
+                android:textSize="16sp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/text_number"
+                app:layout_constraintEnd_toEndOf="@+id/barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Card name"
+                tools:textColor="?android:textColorTertiaryInverse" />
+
+            <TextView
+                android:id="@+id/text_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginStart="16dp"
+                android:text="@{item.number}"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="4444 **** **** 7878"
+                tools:textColor="?android:textColorTertiaryInverse" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="left"
+                app:constraint_referenced_ids="button_list,button_settings,button_refresh,button_edit"
+                tools:layout_editor_absoluteX="411dp" />
+
+            <ImageButton
+                android:id="@+id/button_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_outline_refresh_24px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:tint="?android:textColorPrimary" />
+
+            <ImageButton
+                android:id="@+id/button_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_outline_edit_24px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_refresh"
+                android:tint="?android:textColorPrimary" />
+
+            <ImageButton
+                android:id="@+id/button_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_outline_list_alt_24px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_edit"
+                android:tint="?android:textColorPrimary" />
+
+            <ImageButton
+                android:id="@+id/button_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_outline_settings_24px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_list"
+                app:layout_constraintVertical_bias="0.64"
+                android:tint="?android:textColorPrimary" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

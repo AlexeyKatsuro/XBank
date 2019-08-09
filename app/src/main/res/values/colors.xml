@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e31e24</color>
+    <color name="colorPrimaryDark">#66e31e24</color>
+    <color name="colorSecondary">#4CAF50</color>
+
+    <color name="colorError">@android:color/holo_red_light</color>
+    <color name="colorOnError">#FFFFFF</color>
+
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#212121</color>
+
+<!--    <color name="colorBackground">#F6F6F6</color>-->
+<!--    <color name="colorOnBackground">#212121</color>-->
+    <color name="colorBackground">#212121</color>
+    <color name="colorOnBackground">#F6F6F6</color>
+
+    <color name="default_selected_dot_color">#ffffff</color>
+    <color name="default_dot_color">#e8e8e8</color>
+</resources>
